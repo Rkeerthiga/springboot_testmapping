@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
@@ -18,7 +20,8 @@ public class Person {
 	private Long personId;
 	private String firstName;
 	private String lastName;
-	
+
+	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name = "fk_user_id")
 	private User user;

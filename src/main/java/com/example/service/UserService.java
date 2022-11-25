@@ -22,7 +22,8 @@ public class UserService {
 		Person person = new Person();
 		person.setFirstName(personRegisterRequest.getFirstName());
 		person.setLastName(personRegisterRequest.getLastName());
-		
+
+		person.setUser(user);
 		user.setPerson(person);
 		return userRepository.save(user);
 		

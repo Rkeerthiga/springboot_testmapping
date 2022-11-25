@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import lombok.Data;
 
 @Data
@@ -20,6 +21,7 @@ public class User {
 	private String password;
 	private Boolean isActive;
 	private Boolean isVerified;
+
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Person person;
 
